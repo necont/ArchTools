@@ -14,8 +14,8 @@ import (
     "time"
 )
 
-const url = `http://%s/Pages/ImageFile.ashx?level=10&x=0&y=0&tileOverlap=1024&id=%s&page=0&XHDOC=&archiveId=1`
-const defaulthost="cgaso.regsamarh.ru"
+const url = `https://%s/Pages/ImageFile.ashx?level=13&x=0&y=0&tileSize=0&tileOverlap=1&&id=%s&page=0&rotation=0&searchtext=`
+const defaulthost="tobarhiv.72to.ru"
 
 func copyUrlToFile(url, filename string) bool {
     if resp, err := http.Get(url); err == nil {
@@ -58,7 +58,7 @@ func getArray(content []byte) (array []string) {
 }
 
 func main() {
-    N := runtime.NumCPU() * 2
+    N := 1
 
     dir  := flag.String("dir", ".", "directory to output.")
     host := flag.String("host", defaulthost, "address of e-archive")
